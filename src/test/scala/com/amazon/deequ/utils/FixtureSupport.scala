@@ -142,6 +142,15 @@ trait FixtureSupport {
     ).toDF("item", "att1", "att2")
   }
 
+  def getDfWithReallyLargeNumbers(sparkSession: SparkSession): DataFrame = {
+    import sparkSession.implicits._
+
+    Seq(
+      ("1", Long.MaxValue + 1),
+      ("2", Long.MinValue)
+    ).toDF("item", "att1")
+  }
+
   def getDfCompleteAndInCompleteColumns(sparkSession: SparkSession): DataFrame = {
     import sparkSession.implicits._
 
