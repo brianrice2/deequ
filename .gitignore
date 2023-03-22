@@ -5,5 +5,5 @@ target/
 .metals/
 .vscode/
 .bloop/
-.DS_Store
-
+**/.DS_Store
+.java-version
